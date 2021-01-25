@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	var isValid = true;
+	var valid_inputs = 0;
 
 	var formId = $('form')[0].id;
 	if (formId == 'contact_form') {
@@ -18,7 +18,7 @@ $(document).ready(function () {
 			checkText('#major'); //Four capital letters, please.
 			checkNumber("#isbn"); //Ten digits, please.
 
-			if (isValid == false) {
+			if (valid_inputs < getTotalInputs()) {
 				event.preventDefault();
 				$("#title").focus();
 			} else {
@@ -44,12 +44,15 @@ $(document).ready(function () {
 			checkEmail();
 			checkText('#msgEntry');
 
-			if (isValid == false) {
+			if (valid_inputs == getTotalInputs()) {
+				valid_inputs = 0;
+				$("#dialog").dialog("open").focus();
+				$('#dialog button').click(
+					$("#contact_form").submit() //fix
+				);
+			} else {
 				event.preventDefault();
 				$("#nameEntry").focus();
-			} else {
-				
-				this.submit();
 			}
 		});
 	}
@@ -58,10 +61,9 @@ $(document).ready(function () {
 		var input = $(id).val().trim();
 		var errorElement = $(id).siblings('span');
 		if (input == '' || ! /[A-Za-z]+/.test(input)) {
-			isValid = false;
 			errorElement.text('Please enter letters only.').show();
 		} else {
-			isValid = true;
+			valid_inputs++;
 			errorElement.text('').hide();
 		}
 	}
@@ -71,14 +73,11 @@ $(document).ready(function () {
 		var errorElement = $(id).siblings('span');
 
 		if (input.length == 0 || ! /\d+/.test(input)) {
-			isValid = false;
 			errorElement.text('Please enter numbers only.').show();
 		} else if (input.length < 10) {
-			isValid = false;
 			errorElement.text('Please enter ten digits.').show();
-		}
-		else {
-			isValid = true;
+		} else {
+			valid_inputs++;
 			errorElement.text('').hide();
 		}
 	}
@@ -88,11 +87,14 @@ $(document).ready(function () {
 		var errorElement = $("#emailEntry").siblings('span');
 
 		if (email === "" || ! /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/.test(email)) {
-			isValid = false;
 			errorElement.text("Please enter a valid email.").show();
 		} else {
-			isValid = true;
+			valid_inputs++;
 			errorElement.text('').hide();
 		}
+	}
+
+	function getTotalInputs() {
+		return $(":text, textarea").length;
 	}
 });

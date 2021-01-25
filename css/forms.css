@@ -77,11 +77,15 @@ h3.error {
     margin: 5px 10px;
     border: solid .5px #24c969;
     border-radius: 3px;
-    /* display: none; */
     margin-left: 0;
     margin-right: 72%;
     margin-bottom: 20px;
     font-size: medium;
+}
+
+#dialog{
+    width: inherit!important;
+    font-size: large;
 }
 
 .title{
