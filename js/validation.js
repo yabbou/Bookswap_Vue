@@ -49,12 +49,12 @@ $(document).ready(function () {
 				$('#dialog button').click(
 					$("#contact_form").submit() //fix
 				);
+				// setTimeout(function () { $("#contact_form").submit(); }, 5000); //alternate
 			} else {
 				event.preventDefault();
 				$("#nameEntry").focus();
 			}
 			valid_inputs = 0;
-
 		});
 	}
 
