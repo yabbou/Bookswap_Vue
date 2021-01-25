@@ -179,7 +179,11 @@ const app = new Vue({
 	},
 	computed: {
 		searchResultsFormatted() {
-			return `(${this.searchResults} results)`;
+			var query = this.books.filter(book => book.title.includes(this.searchTerm)).length;
+			return `(${query} results)`;
+		},
+		searchTermFormatted() {
+			return this.searchTerm == '' ? 'ALL BOOKS' : this.searchTerm;
 		}
 	}
 });
