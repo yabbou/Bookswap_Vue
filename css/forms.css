@@ -1,0 +1,104 @@
+#book-form div {
+    display: flex;
+}
+
+.ask-sell-buttons input {
+    width: 100%;
+}
+
+#book-form input[type=text], #book-form input[type=number], .book-buttons {
+    width: 40%;
+}
+
+#book-form[err] .input {
+    /* border: ; */
+}
+
+/* account */
+
+.userPage {
+    display: flex;
+    align-content: space-between;
+    margin-top: 10px;
+}
+
+.userInfo {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.userInfo h4 {
+    margin: 10px 0;
+}
+
+#remove, #logout {
+    color: #7c160f;
+    background-color: #ff8b8b;
+    border: solid .3px #7c160f;
+}
+
+td>form {
+    margin-bottom: 4px;
+}
+
+/* login */
+
+.login-form {
+    width: 35%;
+}
+
+#login-form input {
+    margin: 20px 0;
+}
+
+/* errors */
+
+.error, h3.error {
+    color: #c92432;
+    padding: 15px 30px;
+    background: #f99a6938;
+    margin: 5px 10px;
+    border: solid .5px #c92432;
+    border-radius: 3px;
+    /* display: none; */
+}
+
+/* temp solution... */
+#book-form .error{
+    display: none;
+}
+
+h3.error {
+    margin: auto 0;
+    font-size: smaller;
+    width: 30%;
+}
+
+.success, h3.success {
+    color: #24c969;
+    padding: 15px 25px;
+    background: #7af184b7;
+    margin: 5px 10px;
+    border: solid .5px #24c969;
+    border-radius: 3px;
+    /* display: none; */
+    margin-left: 0;
+    margin-right: 72%;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+
+.title{
+    margin: 0;
+    /* font-size: x-large; */
+}
+
+.all {
+    width: 95%;
+    /* margin-left: 10px; */
+    justify-content: space-between;
+}
+
+h2.admin {
+    margin-top: 0;
+}

@@ -1,0 +1,167 @@
+/* books */
+
+.book-and-tables {
+    margin: 30px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.tables {
+    display: flex;
+    /* margin-top: 15px; */
+    justify-content: space-evenly;
+    border: solid .9px rgb(192, 222, 248);
+    border-radius: 2px;
+    padding: 30px 15px;
+    width: 65%;
+    height: fit-content;
+}
+
+.tables h4.head {
+    text-align: center;
+    margin-top: 0;
+    text-decoration: underline;
+}
+
+.head-and-button {
+    margin: 0 30%;
+    align-items: baseline;
+}
+
+.flex form {
+    margin-bottom: 0;
+}
+
+.flex input {
+    margin-top: 0;
+    margin-left: 8px;
+}
+
+.table-msg{
+    margin-top: 10px;
+}
+
+.selling-wanted {
+    display: inline-block;
+    /* margin-right: 80px; */
+}
+
+.selling-wanted table, .selling-wanted th, .selling-wanted td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px 4px;
+    /* border-radius: 3px; */
+}
+
+.tiles-and-content {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.book-tile {
+    background-color: aliceblue;
+    margin: 15px 10px 20px 36px;
+    /* width: 200px; */
+    border-radius: 3px;
+    border: solid .2px #85b2f5de;
+    padding: 23px;
+    /* padding-bottom: 8px; */
+    padding-bottom: 0;
+    /*  padding:        top right, bottom, left    */
+    list-style: none;
+    box-shadow: 4px 12px 20px 5px #8888883b;
+    height: 300px;
+    display: grid;
+    line-height: 8px;
+}
+
+.book-tile:hover{
+    transform: translateY(-5px);
+    -webkit-transition: transform 0.3s ease-out;
+
+    /* transition: ease;
+    transition-timing-function: ease; */
+}
+.book-tile:blur{
+    -webkit-transition: transform 1s ease;
+}
+
+.book-tile a {
+    color: #666666;
+}
+
+.book-tile h4 {
+    margin: 0;
+}
+
+.book-tile p {
+    margin: 0;
+    /* margin-bottom: 10px; */
+}
+
+.book-tile-img, .userImage {
+    width: 170px;
+    vertical-align: middle;
+    max-height: 230px;
+    /* margin-bottom: 6px; */
+    border: solid .2px #85b2f5de;
+    border-radius: 2px;
+}
+
+.book-tiles {
+    margin: 20px;
+    list-style: none;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-subgroup {
+    margin-bottom: 20px;
+}
+
+.book-information {
+    display: flex;
+    margin-bottom: 20px;
+    /* height: fit-content; */
+}
+
+.book-dets {
+    margin-left: 20px;
+}
+
+/* sidebar */
+
+.sidebar {
+    /* background-color: rgba(79, 181, 245, 0.4); */
+    margin: 15px 0;
+    padding: 25px;
+    padding-top: 0;
+    min-width: 184px;
+    border-right: solid 1px aliceblue;
+}
+
+.sidebar a {
+    /* color: #012a41; */
+}
+
+.browse-text-sidebar input {
+    width: 100%;
+    margin-top: 0;
+    background-color: #f2f2f262;
+}
+
+.sidebar-and-content {
+    display: flex;
+    min-height: 81%;
+    padding-top: 70px;
+}
+
+.sidebar>div>div {
+    margin-bottom: 4px;
+}
+
+.sidebar a:hover {
+    /* .book-tile a:hover */
+    text-decoration: underline;
+}
