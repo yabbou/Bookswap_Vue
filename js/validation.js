@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	var isValid = true;
-
+	
 	$("#book_form").submit(function (event) {
 		event.preventDefault();
 
@@ -15,7 +15,8 @@ $(document).ready(function () {
 		} else {
 			var count = 0;
 			var prof = $('#prof').val();
-			books.forEach(book => {
+			console.log(this.$parent.books);
+			this.$parent.books.forEach(book => {
 				if (book.professor == prof) {
 					count++;
 				}

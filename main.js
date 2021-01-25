@@ -92,43 +92,38 @@ Vue.component('sidebar', {
 	</div>
 </form>
 
-<div>
-	<h3>By Major</h3>
+<div id='accordion'>
+
+	<h3>By Major</h3><div>
 	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.major}} </a>
-	</div>
-</div>
+	</div></div>
 
-<div>
-	<h3>By Professor</h3>
+	<h3>By Professor</h3><div>
 	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.professor}} </a>
-	</div>
-	</ul>
+	</div></div>
+	
 </div>
 
 </div>
-	`,
-	data() {
-		return {
-			books: this.books
-		}
-	}
+</div>
+	`
 });
 
 //not useds
-Vue.component('profs', {
-	template: `
-<div class="routing-group profs">
-	<h1 class="routing-title">Professors</h1>
+// Vue.component('profs', {
+// 	template: `
+// <div class="routing-group profs">
+// 	<h1 class="routing-title">Professors</h1>
 	
-	<div class="landing-options">
-		<div v-if="books.length % 6 == 0">
-			<div v-for="book in books"><a href=./book/{{toHref(book.professor)}}> {{book.professor}}</a></div>
-		</div v-if="books.length % 6 == 0">
-    </div>
-</div>	
-`});
+// 	<div class="landing-options">
+// 		<div v-if="books.length % 6 == 0">
+// 			<div v-for="book in books"><a href=./book/{{toHref(book.professor)}}> {{book.professor}}</a></div>
+// 		</div v-if="books.length % 6 == 0">
+//     </div>
+// </div>	
+// `});
 
 const app = new Vue({
 	el: '#container',
