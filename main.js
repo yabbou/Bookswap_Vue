@@ -1,8 +1,4 @@
 //repeated
-// Vue.component('links_head', {
-// 	template: `
-
-// `});
 
 Vue.component('header_r', {
 	template: `
@@ -38,9 +34,8 @@ Vue.component('footer_r', {
 //custom
 Vue.component('searchbar', {
 	template: `
-	<span>
-<input list='titles' type='text' name='browse' placeholder='Browse our titles' required>
-
+<span>
+	<input list='titles' type='text' name='browse' placeholder='Browse our titles' required>
 </span>
 `
 });
@@ -48,14 +43,14 @@ Vue.component('searchbar', {
 Vue.component('searchbar_home', {
 	template: `
 <div class='b-form-container parallax'>
-    <form id='b-form' action='displayBooks.php' method='get'>
+    <form id='b-form' action='books.html' method='get'>
         <div class='browse-text'>
 			<searchbar></searchbar>
         </div>
 
-        <div class='browse-link'><a href='displayBooks.php?major=#'>By major </a></div>
-        <div class='browse-link'><a href='displayBooks.php?prof=#'>By professor </a></div>
-        <div class='browse-link'><a href='displayBooks.php'>All books </a></div>
+        <div class='browse-link'><a href='books.html?major=#'>By major </a></div>
+        <div class='browse-link'><a href='books.html?prof=#'>By professor </a></div>
+        <div class='browse-link'><a href='books.html'>All books </a></div>
     </form>
 <h1 class="landing-text">Buy This Semester's Books<br>From Last Semester's Students</h1>
 </div>
@@ -81,6 +76,35 @@ Vue.component('carousel', {
 	</div>
 </div>
 `});
+
+Vue.component('sidebar', {
+	template: `
+<div class="sidebar">
+
+<form action="books.html" method="get">
+	<div class="browse-text-sidebar">
+		<input type="text" name="browse" placeholder="Browse our titles" required>
+	<div class="browse-link"><a href="books.html">All books</a></div>
+	</div>
+</form>
+
+<div>
+	<h2>By Major</h2>
+	<div v-for='(book,index) in books' :key='book.index'>
+		<a> {{book.major}} </a>
+	</div>
+</div>
+
+<div>
+	<h2>By Professor</h2>
+	<div v-for='(book,index) in books' :key='book.index'>
+		<a> {{book.professor}} </a>
+	</div>
+</div>
+
+</div>
+	`
+});
 
 //not useds
 Vue.component('profs', {
@@ -137,6 +161,8 @@ const app = new Vue({
 					image: 'img/bio.jpg'
 				}
 			],
+			searchTerm: '',
+			searchResults: 0,
 
 		}
 	},
@@ -151,4 +177,9 @@ const app = new Vue({
 			// return 'book.html?isbn=' + this.books[index].isbn;
 		}
 	},
+	computed: {
+		searchResultsFormatted() {
+			return `(${this.searchResults} results)`;
+		}
+	}
 });
