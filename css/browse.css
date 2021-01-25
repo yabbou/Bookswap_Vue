@@ -183,3 +183,8 @@
     color: rgb(220, 224, 228);
     font-size: small;
 }
+
+#ui-datepicker-div{
+    left: 524px!important;
+    top: 317px!important;
+}
