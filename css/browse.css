@@ -11,7 +11,8 @@
 }
 
 #b-form {
-    margin: 0 20%;
+    margin-left: 23%;
+    margin-right: 10%;
 }
 
 .parallax {
@@ -26,11 +27,14 @@
 }
 
 .browse-text input {
-    width: 80%;
     height: 54px;
     background-color: #f2f2f262;
     margin: 0;
-    width: 100%;
+    width: 80%!important;
+}
+
+.browse-text-sidebar input{
+    width: 100%!important;
 }
 
 .browse-text input::-webkit-calendar-picker-indicator, .browse-text-sidebar input::-webkit-calendar-picker-indicator {
@@ -171,4 +175,11 @@
     height: 27.5%;
     z-index: 2;
     padding: 20px 0!important;
+}
+
+/* accordion */
+
+#accordion-advice{
+    color: rgb(220, 224, 228);
+    font-size: small;
 }

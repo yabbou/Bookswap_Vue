@@ -45,7 +45,6 @@ $(document).ready(function () {
 			checkText('#msgEntry');
 
 			if (valid_inputs == getTotalInputs()) {
-				valid_inputs = 0;
 				$("#dialog").dialog("open").focus();
 				$('#dialog button').click(
 					$("#contact_form").submit() //fix
@@ -54,6 +53,8 @@ $(document).ready(function () {
 				event.preventDefault();
 				$("#nameEntry").focus();
 			}
+			valid_inputs = 0;
+
 		});
 	}
 

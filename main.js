@@ -105,6 +105,7 @@ Vue.component('sidebar', {
 	</div></div>
 	
 </div>
+<span id='accordion-advice'>Click title to expand category</span>
 
 </div>
 </div>
