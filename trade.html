@@ -27,38 +27,38 @@
     <body>
         <div class="inner-body">
             <h2>Trade Book</h2>
-            <form id="book-form">
+            <form id="book_form">
 
                 <div>
-                    <input list="books" type="text" name="title" placeholder="Title">
-                    <span id="t-id" class="error">Only letters, numbers, and white space allowed.</span>
+                    <input list="books" type="text" id="title" placeholder="Title">
+                    <span id="t-id" class="error">*</span>
                 </div>
 
                 <div>
-                    <input list="majors" type="text" name="major" placeholder="Major">
+                    <input list="majors" type="text" id="major" placeholder="Major">
                     <datalist id="majors">
                         <option v-for='book in books' :value='book.major'></option>
                     </datalist>
-                    <span id="c-id" class="error books">Must be 4 capital letters.</span>
+                    <span id="m-id" class="error">*</span>
                 </div>
 
                 <div>
-                    <input list="profs" type="text" name="prof" id="p-id" placeholder="Professor">
+                    <input list="profs" type="text" id="prof" placeholder="Professor">
                     <datalist id="profs">
                         <option v-for='book in books' :value='book.professor'></option>
                     </datalist>
-                    <span id="p-id" class="error prof">Only letters and white space allowed.</span>
+                    <span id="p-id" class="error">*</span>
                 </div>
 
                 <div>
-                    <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999">
-                    <span id="i-id" class="error isbn">Must be a 10-digit number.</span>
+                    <input type="number" id="isbn" placeholder="ISBN-10">
+                    <span id="i-id" class="error">*</span>
                     <!-- should really also check if not taken by other book... live -->
                 </div>
 
                 <div class='book-buttons'>
-                    <input class='btn-add-book' type='submit' name='sell-book' value='Sell Book'>
-                    <input class='btn-add-book' type='submit' name='ask-book' value='Book Wanted'>
+                    <input class='btn-add-book' type='submit' id='sell-book' value='Sell Book'>
+                    <input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted'>
                 </div>
             </form>
 
@@ -70,6 +70,7 @@
 
 </html>
 <script src="main.js"></script>
+<script src="js/validation.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script type="text/javascript" src="stretchyNav.js"></script>
+<script type="text/javascript" src="js/stretchyNav.js"></script>
 <!-- <script src="error.js" type="text/javascript"></script> -->

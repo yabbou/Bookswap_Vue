@@ -1,4 +1,4 @@
-#book-form div {
+#book_form div {
     display: flex;
 }
 
@@ -6,12 +6,8 @@
     width: 100%;
 }
 
-#book-form input[type=text], #book-form input[type=number], .book-buttons {
+#book_form input[type=text], #book_form input[type=number], .book-buttons {
     width: 40%;
-}
-
-#book-form[err] .input {
-    /* border: ; */
 }
 
 /* account */
@@ -64,7 +60,7 @@ td>form {
 }
 
 /* temp solution... */
-#book-form .error{
+#book_form .error{
     display: none;
 }
 

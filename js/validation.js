@@ -1,55 +1,61 @@
 $(document).ready(function () {
+	var isValid = true;
 
-	$("#save").click(function () {
-		$("span").text("");
-		var isValid = true;
+	$("#book_form").submit(function (event) {
+		event.preventDefault();
 
-		var prof = $("#prof").val();
-		var major = $("#major").val();
-		var isbn = $("#isbn").val();
+		checkText('#title'); //Only letters, numbers, and white space allowed.
+		checkText('#prof');  //Only letters and white space allowed.
+		checkText('#major'); //Four capital letters, please.
+		checkNumber("#isbn"); //Ten digits, please.
 
-		checkEmail()
-		checkText(prof);
-		checkText(major);
-		checkNumber(isbn);
-
-		if (zip === "" || ! /^\d{5}(-\d{4})?$/.test(zip)) {
-			isValid = false;
-			$("#zip").next().text("Please enter a valid zip code.");
+		if (isValid == false) {
+			event.preventDefault();
+			$("#title").focus();
+		} else {
+			var count = 0;
+			var prof = $('#prof').val();
+			books.forEach(book => {
+				if (book.professor == prof) {
+					count++;
+				}
+			});
+			alert(`Fun fact: ${count * 100 / books.length} of the books in our system are used by ${prof}!`);
+			this.submit();
 		}
-
-
-		if (isValid) {
-			// code that saves profile info goes here
-		}
-
-		$("#email").focus();
 	});
 
-	$("#email").focus();
-
 	function checkText(id) {
-		if (id == '' || ! /[A-Za-z]+/.text(id)) {
+		var input = $(id).val().trim();
+
+		if (input == '' || ! /[A-Za-z]+/.test(input)) {
 			isValid = false;
-			id.next().text('Please enter letters only.');
+			$(id).siblings('span').text('Please enter letters only.').show();
+		} else {
+			isValid = true;
+			$(id).next().text('').hide();
 		}
 	}
-	// pattern="[\w\d\s]+
-	//minlength="4" maxlength="4"pattern="[A-Z]{4}"
-	//pattern="[\w\s]+"
 
 	function checkNumber(id) {
-		if (id == '' || ! /\d+/.text(id)) {
+		var input = $(id).val().trim();
+
+		if (input.length == 0 || ! /\d+/.test(input)) {
 			isValid = false;
-			id.next().text('Please enter numbers only.');
-		} else if (text.val.length < 10) {
+			$(id).next().text('Please enter numbers only.').show();
+		} else if (input.length < 10) {
 			isValid = false;
-			id.next().text('Please enter ten digits.');
+			$(id).next().text('Please enter ten digits.').show();
+		}
+		else {
+			isValid = true;
+			$(id).next().text('').hide();
 		}
 	}
 
 	function checkEmail() {
-		var email = $("#email").val();
+		var email = $("#email").val().trim();
+
 		if (email === "" || ! /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/.test(email)) {
 			isValid = false;
 			email.next().text("Please enter a valid email.");
