@@ -67,7 +67,7 @@ footer p{
 /* buttons and inputs */
 
 input[type=text], input[type=number], input[type=email], input[type=password], textarea {
-    width: 100%;
+    /* width: 100%; */
     padding: 15px 20px;
     margin: 8px 0;
     display: block;
@@ -78,8 +78,8 @@ input[type=text], input[type=number], input[type=email], input[type=password], t
 }
 
 textarea {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 40%;
+    max-width: 40%;
     height: 140px;
 }
 
@@ -105,11 +105,6 @@ input[type=submit]:hover, button:hover {
 
 .send {
     float: right;
-}
-
-.contact-form {
-    width: 60%;
-    /* margin-bottom: 20px; */
 }
 
 .slick-prev {

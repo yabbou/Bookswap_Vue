@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/stretchyNav.js"></script>
+    <script type="text/javascript" src="js/validation.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -22,17 +23,21 @@
 
 <span id="container">
     <header_r></header_r>
-    <div class="contact-form inner-body">
+    <div class="inner-body">
+        <h2>Contact Us</h2>
+        <h4>Feel Free to Reach Out!</h4>
+        
+        <form id="contact_form" action="index.html" method="POST">
+            <div><input type="text" placeholder="Enter Name Here" id="nameEntry" >
+            <span class="error"></span></div>
 
-        <form class="contact-form" action="index.html" method="POST">
+            <div><input type="text" placeholder="Enter Email Here" id="emailEntry" >
+            <span class="error"></span></div>
 
-            <h2>Contact Us</h2>
-            <h4>Feel Free to Reach Out!</h4>
-            <input type="text" placeholder="Enter Name Here" name="nameEntry" required>
-            <input type="text" placeholder="Enter Email Here" name="emailEntry" required>
-            <textarea placeholder="Enter Comments Here" name="msgEntry" required></textarea>
+            <div><textarea placeholder="Enter Comments Here" id="msgEntry" ></textarea>
+            <span class="error"></span></div>
 
-            <input class="send" type="submit" value="Send"> </input>
+            <div class="submit-button"> <input class="send" type="submit" value="Send"> </input></div>
         </form>
     </div>
     <footer_r></footer_r>
