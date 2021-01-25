@@ -19,21 +19,22 @@
     <link rel="stylesheet" href="css/stretchyNav.css" type="text/css" />
 </head>
 
-</head>
-
 <span id="container">
     <header_r></header_r>
 
     <body>
         <div class='sidebar-and-content'>
             <sidebar></sidebar>
+
             <div class='tiles-and-content'>
                 <h3 class='browse-res'>Searched: {{searchTermFormatted}} {{searchResultsFormatted}}</h3>
                 <div class='tiles-grid'>
                     <ul class='book-tiles'>
                         <li class="book-tile" v-for='book in books'>
-                            <img :src='book.image' :alt='book.title'>
-                            <h4>{{book.title}}</h4>
+                            <a> <img :src='book.image' :alt='book.title'> </a>
+                            <a>
+                                <h4>{{book.title}}</h4>
+                            </a>
                             <!-- <p>Available: <strong> {{$numAvailable}} </strong></p> -->
                         </li>
                     </ul>
@@ -42,7 +43,7 @@
         </div>
     </body>
 
-    <footer_c></footer_c>
+    <footer_r></footer_r>
 </span>
 
 </html>

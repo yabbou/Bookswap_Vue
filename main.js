@@ -78,6 +78,10 @@ Vue.component('carousel', {
 `});
 
 Vue.component('sidebar', {
+	props: {
+		books_initial: []
+	},
+
 	template: `
 <div class="sidebar">
 
@@ -89,21 +93,27 @@ Vue.component('sidebar', {
 </form>
 
 <div>
-	<h2>By Major</h2>
-	<div v-for='(book,index) in books' :key='book.index'>
+	<h3>By Major</h3>
+	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.major}} </a>
 	</div>
 </div>
 
 <div>
-	<h2>By Professor</h2>
-	<div v-for='(book,index) in books' :key='book.index'>
+	<h3>By Professor</h3>
+	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.professor}} </a>
 	</div>
+	</ul>
 </div>
 
 </div>
-	`
+	`,
+	data() {
+		return {
+			books: this.books
+		}
+	}
 });
 
 //not useds

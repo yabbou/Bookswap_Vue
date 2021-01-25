@@ -61,7 +61,7 @@
 .book-tile {
     background-color: aliceblue;
     margin: 15px 10px 20px 36px;
-    /* width: 200px; */
+    width: 220px;
     border-radius: 3px;
     border: solid .2px #85b2f5de;
     padding: 23px;
