@@ -1,6 +1,7 @@
 
 #book_form div, #contact_form div {
     display: flex;
+    align-items: baseline;
 }
 
 .ask-sell-buttons input {
@@ -9,6 +10,9 @@
 
 form input[type=text], input[type=number], form textarea, .book-buttons, .submit-button {
     width: 40%;
+}
+input.send{
+    /* float: right; */
 }
 
 /* account */
@@ -57,11 +61,6 @@ td>form {
     margin: 5px 10px;
     border: solid .5px #c92432;
     border-radius: 3px;
-    /* display: none; */
-}
-
-/* temp solution... */
-#book_form .error{
     display: none;
 }
 

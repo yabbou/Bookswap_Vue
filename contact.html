@@ -7,8 +7,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/stretchyNav.js"></script>
     <script type="text/javascript" src="js/validation.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -26,19 +28,24 @@
     <div class="inner-body">
         <h2>Contact Us</h2>
         <h4>Feel Free to Reach Out!</h4>
-        
+
         <form id="contact_form" action="index.html" method="POST">
-            <div><input type="text" placeholder="Enter Name Here" id="nameEntry" >
-            <span class="error"></span></div>
+            <div><input type="text" placeholder="Enter Name Here" id="nameEntry">
+                <span class="error"></span>
+            </div>
 
-            <div><input type="text" placeholder="Enter Email Here" id="emailEntry" >
-            <span class="error"></span></div>
-
-            <div><textarea placeholder="Enter Comments Here" id="msgEntry" ></textarea>
-            <span class="error"></span></div>
+            <div><input type="text" placeholder="Enter Email Here" id="emailEntry">
+                <span class="error"></span>
+            </div>
+            <!-- <span style:"font-size:small">Example: student@touro.edu</span> -->
+            <div><textarea placeholder="Enter Comments Here" id="msgEntry"></textarea>
+                <span class="error"></span>
+            </div>
 
             <div class="submit-button"> <input class="send" type="submit" value="Send"> </input></div>
         </form>
+        <div id="dialog-1" title="Dialog Title goes here...">This my first jQuery UI Dialog!</div>
+        <button id="opener">Open Dialog</button>
     </div>
     <footer_r></footer_r>
 </span>

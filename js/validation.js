@@ -42,12 +42,13 @@ $(document).ready(function () {
 
 			checkText('#nameEntry');
 			checkEmail();
-			// checkText('#msgEntry');
+			checkText('#msgEntry');
 
 			if (isValid == false) {
 				event.preventDefault();
 				$("#nameEntry").focus();
 			} else {
+				
 				this.submit();
 			}
 		});
@@ -84,10 +85,14 @@ $(document).ready(function () {
 
 	function checkEmail() {
 		var email = $("#emailEntry").val().trim();
+		var errorElement = $("#emailEntry").siblings('span');
 
 		if (email === "" || ! /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/.test(email)) {
 			isValid = false;
-			$("#emailEntry").next().text("Please enter a valid email.");
+			errorElement.text("Please enter a valid email.").show();
+		} else {
+			isValid = true;
+			errorElement.text('').hide();
 		}
 	}
 });
