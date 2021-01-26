@@ -27,41 +27,7 @@
     <body>
         <div class="inner-body">
             <h2>Trade Book</h2>
-            
-            <form id="book_form">
-                <div>
-                    <input list="books" type="text" id="title" placeholder="Title">
-                    <span id="t-id" class="error">*</span>
-                </div>
-
-                <div>
-                    <input list="majors" type="text" id="major" placeholder="Major">
-                    <datalist id="majors">
-                        <option v-for='book in books' :value='book.major'></option>
-                    </datalist>
-                    <span id="m-id" class="error">*</span>
-                </div>
-
-                <div>
-                    <input list="profs" type="text" id="prof" placeholder="Professor">
-                    <datalist id="profs">
-                        <option v-for='book in books' :value='book.professor'></option>
-                    </datalist>
-                    <span id="p-id" class="error">*</span>
-                </div>
-
-                <div>
-                    <input type="number" id="isbn" placeholder="ISBN-10">
-                    <span id="i-id" class="error">*</span>
-                    <!-- should really also check if not taken by other book... live -->
-                </div>
-
-                <div class='book-buttons'>
-                    <input class='btn-add-book' type='submit' id='sell-book' value='Sell Book'>
-                    <input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted'>
-                </div>
-            </form>
-
+            <trade_form @book-submitted='addBook'></trade_form>
         </div>
     </body>
 

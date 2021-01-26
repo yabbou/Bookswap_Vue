@@ -33,8 +33,7 @@
 
             <div class='jcarousel'>
                 <div v-for='(book, index) in books' :key='book.index'>
-                    <a :href="isbn()">
-                        <img :src='book.image' :alt='book.title'></a>
+                    <a><img :src='book.image' :alt='book.title'></a>
                     <h4><a>{{book.title}}</a></h4>
                 </div>
             </div>

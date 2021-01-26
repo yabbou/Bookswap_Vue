@@ -21,17 +21,20 @@ $(document).ready(function () {
 			if (valid_inputs < getTotalInputs()) {
 				event.preventDefault();
 				$("#title").focus();
-			} else {
-				var count = 0;
-				var prof = $('#prof').val();
 				console.log(this.$parent.books); //does not yet access vue data()
-				this.$parent.books.forEach(book => {
-					if (book.professor == prof) {
-						count++;
-					}
-				});
-				alert(`Fun fact: ${count * 100 / books.length} of the books in our system are used by ${prof}!`);
-				this.submit();
+			
+			} else {
+			// 	var count = 0;
+			// 	var prof = $('#prof').val();
+				console.log(this.$parent.books); //does not yet access vue data()
+			// 	this.$parent.books.forEach(book => {
+			// 		if (book.professor == prof) {
+			// 			count++;
+			// 		}
+			// 	});
+			// 	alert(`Fun fact: ${count * 100 / books.length} of the books in our system are used by ${prof}!`);
+				window.location = '../books.html';
+				// this.submit();
 			}
 		});
 	}

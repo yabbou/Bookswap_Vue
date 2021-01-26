@@ -36,15 +36,24 @@ Vue.component('footer_r', {
 Vue.component('searchbar', {
 	template: `
 <span>
-	<input list='titles' type='text' name='browse' placeholder='Browse our titles' required>
+	<form @submit.prevet='onSubmit'><input v-model="searchTerm" list='titles' type='text' name='browse' placeholder='Browse our titles' required></form>
 </span>
-`
+`,
+	data() {
+		return { searchTerm: '' }
+	},
+	methods: {
+		onSubmit() {
+			this.$parent.searchTerm = this.searchTerm;
+			console.log(this.searchTerm);
+		}
+	}
 });
 
 Vue.component('searchbar_home', {
 	template: `
 <div class='b-form-container parallax'>
-    <form id='b-form' action='books.html' method='get'>
+    <form id='b-form' method='get'>
         <div class='browse-text'>
 			<searchbar></searchbar>
         </div>
@@ -71,12 +80,18 @@ Vue.component('carousel', {
 	<h3 class='featured'>Featured</h3>
 	
 	<div class='jcarousel'>
-		<div v-for='(book,index) in books' :key='book.index'>
+		<div v-for='(book,index) in orderedBooks' :key='book.index'>
 			<h4><a :title='book.title'></a></h4>;
 		</div>
 	</div>
 </div>
-`});
+`,
+	computed: {
+		orderedBooks() {
+			return _.orderBy(this.$parent.books, 'qtyInStock'); //fix
+		}
+	}
+});
 
 Vue.component('sidebar', {
 	props: {
@@ -88,7 +103,7 @@ Vue.component('sidebar', {
 
 <form action="books.html" method="get">
 	<div class="browse-text-sidebar">
-		<input type="text" name="browse" placeholder="Browse our titles" required>
+		<searchbar></searchbar>
 	<div class="browse-link"><a href="books.html">All books</a></div>
 	</div>
 </form>
@@ -113,12 +128,73 @@ Vue.component('sidebar', {
 	`
 });
 
-//not useds
+Vue.component('trade_form', {
+	template: `
+<form id="book_form" @submit.prevent='onSubmit' >
+<div>
+	<input v-model='title' list="books" type="text" id="title" placeholder="Title">
+	<span id="t-id" class="error">*</span>
+</div>
+
+<div>
+	<input v-model='major' list="majors" type="text" id="major" placeholder="Major">
+	<datalist id="majors">
+		<option v-for='book in this.$parent.books' :value='book.major'></option>
+	</datalist>
+	<span id="m-id" class="error">*</span>
+</div>
+
+<div>
+	<input v-model='professor' list="profs" type="text" id="prof" placeholder="Professor">
+	<datalist id="profs">
+		<option v-for='book in this.$parent.books' :value='book.professor'></option>
+	</datalist>
+	<span id="p-id" class="error">*</span>
+</div>
+
+<div>
+	<input v-model='isbn' type="number" id="isbn" placeholder="ISBN-10">
+	<span id="i-id" class="error">*</span>
+	<!-- should really also check if not taken by other book... live -->
+</div>
+
+<div class='book-buttons'>
+	<input class='btn-add-book' type='submit' id='sell-book' value='Sell Book'>
+	<input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted'>
+</div>
+</form>`,
+
+	data() {
+		return {
+			title: '',
+			professor: '',
+			major: '',
+			isbn: '',
+		}
+	},
+
+	methods: {
+		onSubmit() {
+			let newBook = {
+				title: this.title,
+				professor: this.professor,
+				major: this.major,
+				isbn: this.isbn,
+				image: 'img/no-image.png',
+				qtyInStock: 1,
+			};
+			this.$emit('book-submitted', newBook);
+			this.title = this.professor = this.major = this.isbn = null;
+		}
+	}
+
+});
+
 // Vue.component('profs', {
 // 	template: `
 // <div class="routing-group profs">
 // 	<h1 class="routing-title">Professors</h1>
-	
+
 // 	<div class="landing-options">
 // 		<div v-if="books.length % 6 == 0">
 // 			<div v-for="book in books"><a href=./book/{{toHref(book.professor)}}> {{book.professor}}</a></div>
@@ -137,55 +213,62 @@ const app = new Vue({
 					professor: 'Prof Asif',
 					major: 'EBEN',
 					isbn: '1234567890',
-					image: 'img/macro.jpg'
+					image: 'img/macro.jpg',
+					qtyInStock: 2
 				},
 				{
 					title: 'Intro to Psychology',
 					professor: 'Prof Perry',
 					major: 'PSYN',
 					isbn: '0987654321',
-					image: 'img/psy.jpg'
+					image: 'img/psy.jpg',
+					qtyInStock: 1
 				},
 				{
 					title: 'Frankenstein',
 					professor: 'Prof Browne',
 					major: 'EBEN',
 					isbn: '1234512345',
-					image: 'img/frank.jpg'
+					image: 'img/frank.jpg',
+					qtyInStock: 3
 				},
 				{
 					title: 'Advanced Programming',
 					professor: 'Prof Robinson',
 					major: 'MCON',
 					isbn: '2222222222',
-					image: 'img/java.jpg'
+					image: 'img/java.jpg',
+					qtyInStock: 0
 				},
 				{
 					title: 'Biology I',
 					professor: 'Prof Abrahmson',
 					major: 'BION',
 					isbn: '7771112223',
-					image: 'img/bio.jpg'
+					image: 'img/bio.jpg',
+					qtyInStock: 2
 				}
 			],
 			searchTerm: '',
 			searchResults: 0,
-
 		}
 	},
 	methods: {
+		addBook(newBook) {
+			this.books.push(newBook);
+		},
 		toHref(prof) {
 			prof = prof.toLowerCase();
 			prof = prof.replace(' ', '-');
 			return prof;
 		},
-		isbn(index) {
-			console.log(index);
+		// isbn(index) {
+			// console.log(index);
 			// return 'book.html?isbn=' + this.books[index].isbn;
-		}
+		// }
 	},
 	computed: {
-		searchResultsFormatted() {
+		searchResultsFormatted() { //fix
 			var query = this.books.filter(book => book.title.includes(this.searchTerm)).length;
 			return `(${query} results)`;
 		},

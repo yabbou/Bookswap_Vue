@@ -65,14 +65,14 @@
     border-radius: 3px;
     border: solid .2px #85b2f5de;
     padding: 23px;
-    /* padding-bottom: 8px; */
-    padding-bottom: 0;
+    padding-bottom: 8px;
+    padding-top: 16px;
     /*  padding:        top right, bottom, left    */
     list-style: none;
     box-shadow: 4px 12px 20px 5px #8888883b;
-    height: 300px;
+    /* height: 300px; */
     display: grid;
-    line-height: 8px;
+    /* line-height: 18px; */
 }
 
 .book-tile:hover{
@@ -86,8 +86,13 @@
     -webkit-transition: transform 1s ease;
 }
 
-.book-tile a {
+.book-tile a img {
     color: #666666;
+    height: 200px;
+}
+
+.img-link{
+    text-align: center;
 }
 
 .book-tile h4 {
@@ -103,7 +108,7 @@
     width: 170px;
     vertical-align: middle;
     max-height: 230px;
-    /* margin-bottom: 6px; */
+    margin-bottom: 6px;
     border: solid .2px #85b2f5de;
     border-radius: 2px;
 }
