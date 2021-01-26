@@ -44,8 +44,12 @@
                 <input type="text" id="datepicker" placeholder="Select Comment Date Here">
             </div>
 
-            <div><textarea placeholder="Enter Comments Here" id="msgEntry"></textarea>
-                <span class="error"></span>
+            <div>
+                <textarea v-model='msgEntry' placeholder="Enter Comments Here" id="msgEntry"></textarea>
+                <!-- <div id="msgEntryMessages"> -->
+                    <span class="error"></span>
+                    <span class="success" v-if=isLong>Thanks for the valuable feedback!</span>
+                <!-- </div> -->
             </div>
 
             <div class="submit-button"> <input class="send" type="submit" value="Send"> </input></div>

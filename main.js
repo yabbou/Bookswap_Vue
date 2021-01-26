@@ -175,13 +175,28 @@ Vue.component('trade_form', {
 				major: this.major,
 				isbn: this.isbn,
 				image: 'img/no-image.png',
-				qtyInStock: isSold, 
+				qtyInStock: isSold,
 			};
 			bus.$emit('book-submitted', newBook);
 			// this.title = this.professor = this.major = this.isbn = null;
 		}
 	}
 
+});
+
+Vue.component('book', {
+	props: { book: { type: Array } },
+	template: `
+	<li class="book-tile">
+		<a class="img-link"> <img :src='book.image' :alt='book.title'> </a>
+		<a><h4>{{book.title}}</h4></a>
+		<p>Available:
+			<strong :style="{color: 'book.qtyInStock' == 0 ? 'darkred' : 'black'}">
+				{{book.qtyInStock}}
+			</strong>
+		</p>
+	</li>
+		`
 });
 
 // Vue.component('profs', {
@@ -201,50 +216,51 @@ const app = new Vue({
 	el: '#container',
 	data: {
 		// return {
-			books: [
-				{
-					title: 'Intro to Macroeconomics',
-					professor: 'Prof Asif',
-					major: 'EBEN',
-					isbn: '1234567890',
-					image: 'img/macro.jpg',
-					qtyInStock: 2
-				},
-				{
-					title: 'Intro to Psychology',
-					professor: 'Prof Perry',
-					major: 'PSYN',
-					isbn: '0987654321',
-					image: 'img/psy.jpg',
-					qtyInStock: 1
-				},
-				{
-					title: 'Frankenstein',
-					professor: 'Prof Browne',
-					major: 'EBEN',
-					isbn: '1234512345',
-					image: 'img/frank.jpg',
-					qtyInStock: 3
-				},
-				{
-					title: 'Advanced Programming',
-					professor: 'Prof Robinson',
-					major: 'MCON',
-					isbn: '2222222222',
-					image: 'img/java.jpg',
-					qtyInStock: 0
-				},
-				{
-					title: 'Biology I',
-					professor: 'Prof Abrahmson',
-					major: 'BION',
-					isbn: '7771112223',
-					image: 'img/bio.jpg',
-					qtyInStock: 2
-				}
-			],
-			searchTerm: '',
-			searchResults: 0,
+		books: [
+			{
+				title: 'Intro to Macroeconomics',
+				professor: 'Prof Asif',
+				major: 'EBEN',
+				isbn: '1234567890',
+				image: 'img/macro.jpg',
+				qtyInStock: 2
+			},
+			{
+				title: 'Intro to Psychology',
+				professor: 'Prof Perry',
+				major: 'PSYN',
+				isbn: '0987654321',
+				image: 'img/psy.jpg',
+				qtyInStock: 1
+			},
+			{
+				title: 'Frankenstein',
+				professor: 'Prof Browne',
+				major: 'EBEN',
+				isbn: '1234512345',
+				image: 'img/frank.jpg',
+				qtyInStock: 3
+			},
+			{
+				title: 'Advanced Programming',
+				professor: 'Prof Robinson',
+				major: 'MCON',
+				isbn: '2222222222',
+				image: 'img/java.jpg',
+				qtyInStock: 0
+			},
+			{
+				title: 'Biology I',
+				professor: 'Prof Abrahmson',
+				major: 'BION',
+				isbn: '7771112223',
+				image: 'img/bio.jpg',
+				qtyInStock: 2
+			}
+		],
+		searchTerm: '',
+		searchResults: 0,
+		msgEntry: ''
 		// }
 	},
 	methods: {
@@ -266,8 +282,13 @@ const app = new Vue({
 			return this.searchTerm == '' ? 'ALL BOOKS' : this.searchTerm;
 		},
 		// isbn(index) {
-			// console.log(index);
-			// return 'book.html?isbn=' + this.books[index].isbn;
-		// }
+		// console.log(index);
+		// return 'book.html?isbn=' + this.books[index].isbn;
+		// },
+		isLong() {
+			console.log();
+			var MANY_CHARACTERS = 5;
+			return this.msgEntry.length > MANY_CHARACTERS;
+		}
 	}
 });

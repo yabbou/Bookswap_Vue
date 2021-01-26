@@ -34,18 +34,9 @@
                 <h3 class='browse-res'>Searched: {{searchTermFormatted}} {{searchResultsFormatted}}</h3>
                 <div class='tiles-grid'>
                     <ul class='book-tiles'>
-                        <li class="book-tile" v-for='book in books'>
-                            <a class="img-link"> <img :src='book.image' :alt='book.title'> </a>
-                            <a>
-                                <h4>{{book.title}}</h4>
-                            </a>
-                            <p>Available:
-                                <strong :style="{color: 'book.qtyInStock' == 0 ? 'darkred' : 'black'}">
-                                    {{book.qtyInStock}}
-                                </strong>
-                            </p>
-                        </li>
+                        <book v-for='book in books' :book='book'></book>
                     </ul>
+                    <!-- alternative to directly refercing the vue instance data... -->
                 </div>
             </div>
         </div>

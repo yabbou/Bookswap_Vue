@@ -77,8 +77,8 @@ h3.error {
     margin: 5px 10px;
     border: solid .5px #24c969;
     border-radius: 3px;
-    margin-left: 0;
-    margin-right: 72%;
+    /* margin-left: 0; */
+    /* margin-right: 72%; */
     margin-bottom: 20px;
     font-size: medium;
 }

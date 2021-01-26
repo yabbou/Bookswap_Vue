@@ -65,7 +65,7 @@ $(document).ready(function () {
 
 	function checkText(id) {
 		var input = $(id).val().trim();
-		var errorElement = $(id).siblings('span');
+		var errorElement = $(id).siblings('span').first();
 		if (input == '' || ! /[A-Za-z]+/.test(input)) {
 			errorElement.text('Please enter letters only.').show();
 		} else {
