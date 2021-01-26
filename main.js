@@ -191,9 +191,9 @@ Vue.component('book', {
 		<a class="img-link"> <img :src='book.image' :alt='book.title'> </a>
 		<a><h4>{{book.title}}</h4></a>
 		<p>Available:
-			<strong :style="{color: 'book.qtyInStock' == 0 ? 'darkred' : 'black'}">
+			<b :style="{color: book.qtyInStock == 0 ? 'darkred' : 'black'}">
 				{{book.qtyInStock}}
-			</strong>
+			</b>
 		</p>
 	</li>
 		`
