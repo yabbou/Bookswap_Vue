@@ -1,4 +1,4 @@
-//repeated
+var bus = new Vue();
 
 Vue.component('header_r', {
 	template: `
@@ -94,10 +94,6 @@ Vue.component('carousel', {
 });
 
 Vue.component('sidebar', {
-	props: {
-		books_initial: []
-	},
-
 	template: `
 <div class="sidebar">
 
@@ -109,7 +105,6 @@ Vue.component('sidebar', {
 </form>
 
 <div id='accordion'>
-
 	<h3>By Major</h3><div>
 	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.major}} </a>
@@ -119,7 +114,6 @@ Vue.component('sidebar', {
 	<div v-for='(book,index) in this.$parent.books' :key='book.index'>
 		<a> {{book.professor}} </a>
 	</div></div>
-	
 </div>
 <span id='accordion-advice'>Click title to expand category</span>
 
@@ -130,7 +124,7 @@ Vue.component('sidebar', {
 
 Vue.component('trade_form', {
 	template: `
-<form id="book_form" @submit.prevent='onSubmit' >
+<form id="book_form">
 <div>
 	<input v-model='title' list="books" type="text" id="title" placeholder="Title">
 	<span id="t-id" class="error">*</span>
@@ -159,8 +153,8 @@ Vue.component('trade_form', {
 </div>
 
 <div class='book-buttons'>
-	<input class='btn-add-book' type='submit' id='sell-book' value='Sell Book'>
-	<input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted'>
+	<input class='btn-add-book' type='submit' id='sell-book' value='Sell Book' @click='onSubmit(1)'>
+	<input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted' @click='onSubmit(0)'>
 </div>
 </form>`,
 
@@ -174,17 +168,17 @@ Vue.component('trade_form', {
 	},
 
 	methods: {
-		onSubmit() {
+		onSubmit(isSold) {
 			let newBook = {
 				title: this.title,
 				professor: this.professor,
 				major: this.major,
 				isbn: this.isbn,
 				image: 'img/no-image.png',
-				qtyInStock: 1,
+				qtyInStock: isSold, 
 			};
-			this.$emit('book-submitted', newBook);
-			this.title = this.professor = this.major = this.isbn = null;
+			bus.$emit('book-submitted', newBook);
+			// this.title = this.professor = this.major = this.isbn = null;
 		}
 	}
 
@@ -205,8 +199,8 @@ Vue.component('trade_form', {
 
 const app = new Vue({
 	el: '#container',
-	data() {
-		return {
+	data: {
+		// return {
 			books: [
 				{
 					title: 'Intro to Macroeconomics',
@@ -251,7 +245,7 @@ const app = new Vue({
 			],
 			searchTerm: '',
 			searchResults: 0,
-		}
+		// }
 	},
 	methods: {
 		addBook(newBook) {
@@ -262,10 +256,6 @@ const app = new Vue({
 			prof = prof.replace(' ', '-');
 			return prof;
 		},
-		// isbn(index) {
-			// console.log(index);
-			// return 'book.html?isbn=' + this.books[index].isbn;
-		// }
 	},
 	computed: {
 		searchResultsFormatted() { //fix
@@ -274,6 +264,10 @@ const app = new Vue({
 		},
 		searchTermFormatted() {
 			return this.searchTerm == '' ? 'ALL BOOKS' : this.searchTerm;
-		}
+		},
+		// isbn(index) {
+			// console.log(index);
+			// return 'book.html?isbn=' + this.books[index].isbn;
+		// }
 	}
 });

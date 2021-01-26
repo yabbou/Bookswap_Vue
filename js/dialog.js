@@ -5,7 +5,7 @@ $(function () {
 		position: {
 			my: "center+42 top",
 			at: "top-84",
-			of: "#contact_form"
+			of: "form"
 		}
 	});
 	// $(".submit-button").click(function () {

@@ -9,6 +9,11 @@ $(document).ready(function () {
 		validateBookForm();
 	}
 
+	var num_books_sold = 0;
+	$('#sell-book').click(function () {
+		num_books_sold = 1;
+	});
+
 	function validateBookForm() {
 		$("#book_form").submit(function (event) {
 			event.preventDefault();
@@ -18,24 +23,21 @@ $(document).ready(function () {
 			checkText('#major'); //Four capital letters, please.
 			checkNumber("#isbn"); //Ten digits, please.
 
-			if (valid_inputs < getTotalInputs()) {
+			if (valid_inputs == getTotalInputs()) {
+				var prof = $('#prof').val();
+
+				app.books.forEach(book => {
+					if (book.professor == prof && book.qtyInStock) {
+						num_books_sold++;
+					}
+				});
+				showFunFact(num_books_sold, prof);
+				num_books_sold = 0;
+			} else {
 				event.preventDefault();
 				$("#title").focus();
-				console.log(this.$parent.books); //does not yet access vue data()
-			
-			} else {
-			// 	var count = 0;
-			// 	var prof = $('#prof').val();
-				console.log(this.$parent.books); //does not yet access vue data()
-			// 	this.$parent.books.forEach(book => {
-			// 		if (book.professor == prof) {
-			// 			count++;
-			// 		}
-			// 	});
-			// 	alert(`Fun fact: ${count * 100 / books.length} of the books in our system are used by ${prof}!`);
-				window.location = '../books.html';
-				// this.submit();
 			}
+			valid_inputs = 0;
 		});
 	}
 
@@ -49,9 +51,9 @@ $(document).ready(function () {
 
 			if (valid_inputs == getTotalInputs()) {
 				$("#dialog").dialog("open").focus();
-				$('#dialog button').click(
-					$("#contact_form").submit() //fix
-				);
+				// $('#dialog button').click(
+				// 	$("#contact_form").submit() //fix
+				// );
 				// setTimeout(function () { $("#contact_form").submit(); }, 5000); //alternate
 			} else {
 				event.preventDefault();
@@ -99,6 +101,11 @@ $(document).ready(function () {
 	}
 
 	function getTotalInputs() {
-		return $(":text, textarea").length;
+		return $(".error").length;
+	}
+
+	function showFunFact(count, prof) {
+		var msg = `Fun fact: ${count * 100 / app.books.length}% of the books being sold in our system are used by ${prof}!`;
+		$('#dialog').text(msg).dialog("open").focus();
 	}
 });

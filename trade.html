@@ -7,7 +7,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/stretchyNav.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/dialog.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar.css" type="text/css" />
@@ -27,7 +31,8 @@
     <body>
         <div class="inner-body">
             <h2>Trade Book</h2>
-            <trade_form @book-submitted='addBook'></trade_form>
+            <trade_form></trade_form>
+            <div id="dialog" class="success"></div>
         </div>
     </body>
 
@@ -36,6 +41,6 @@
 
 </html>
 <script src="main.js"></script>
-<script src="js/validation.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script type="text/javascript" src="js/stretchyNav.js"></script>
+<script>
+    
+</script>
