@@ -80,8 +80,12 @@ $(document).ready(function () {
 
 		if (input.length == 0 || ! /\d+/.test(input)) {
 			errorElement.text('Please enter numbers only.').show();
-		} else if (input.length < 10) {
-			errorElement.text('Please enter ten digits.').show();
+		} else if (input.length == 10) {
+			alert('Heads up: ISBN-13 offers highest price accuracy.');
+			valid_inputs++;
+			errorElement.text('').hide();
+		} else if (input.length != 10 || input.length != 13) {
+			errorElement.text('Please enter ten or thirteen digits.').show();
 		} else {
 			valid_inputs++;
 			errorElement.text('').hide();

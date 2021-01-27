@@ -8,9 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="js/accordion.js"></script>
     <script src="js/stretchyNav.js"></script>
     <script src="js/validation.js"></script>
+    <script src="js/search.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -34,7 +36,7 @@
                 <h3 class='browse-res'>Searched: {{searchTermFormatted}} {{searchResultsFormatted}}</h3>
                 <div class='tiles-grid'>
                     <ul class='book-tiles'>
-                        <book v-for='book in books' :book='book'></book>
+                        <book v-for='book in books' :key='book.isbn' :book='book'></book>
                     </ul>
                     <!-- alternative to directly refercing the vue instance data... -->
                 </div>

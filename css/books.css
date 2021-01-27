@@ -37,7 +37,7 @@
     margin-left: 8px;
 }
 
-.table-msg{
+.table-msg {
     margin-top: 10px;
 }
 
@@ -75,14 +75,14 @@
     /* line-height: 18px; */
 }
 
-.book-tile:hover{
+.book-tile:hover {
     transform: translateY(-5px);
     -webkit-transition: transform 0.3s ease-out;
-
     /* transition: ease;
     transition-timing-function: ease; */
 }
-.book-tile:blur{
+
+.book-tile:blur {
     -webkit-transition: transform 1s ease;
 }
 
@@ -91,7 +91,7 @@
     height: 200px;
 }
 
-.img-link{
+.img-link {
     text-align: center;
 }
 
@@ -169,4 +169,15 @@
 .sidebar a:hover {
     /* .book-tile a:hover */
     text-decoration: underline;
+}
+
+svg {
+    float: right;
+    bottom: -2px;
+    right: 3px;
+    position: relative;
+}
+
+.tooltip-inner {
+    width: 150px;
 }

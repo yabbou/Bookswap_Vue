@@ -147,7 +147,7 @@ Vue.component('trade_form', {
 </div>
 
 <div>
-	<input v-model='isbn' type="number" id="isbn" placeholder="ISBN-10">
+	<input v-model='isbn' type="number" id="isbn" placeholder="ISBN-13">
 	<span id="i-id" class="error">*</span>
 	<!-- should really also check if not taken by other book... live -->
 </div>
@@ -185,7 +185,7 @@ Vue.component('trade_form', {
 });
 
 Vue.component('book', {
-	props: { book: { type: Array } },
+	props: { book: { type: Object } },
 	template: `
 	<li class="book-tile">
 		<a class="img-link"> <img :src='book.image' :alt='book.title'> </a>
@@ -194,6 +194,10 @@ Vue.component('book', {
 			<b :style="{color: book.qtyInStock == 0 ? 'darkred' : 'black'}">
 				{{book.qtyInStock}}
 			</b>
+			<a data-toggle="tooltip" href="#" :id='book.isbn'><svg :id='book.isbn' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+				<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+				<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+		  	</svg></a>
 		</p>
 	</li>
 		`
@@ -221,7 +225,7 @@ const app = new Vue({
 				title: 'Intro to Macroeconomics',
 				professor: 'Prof Asif',
 				major: 'EBEN',
-				isbn: '1234567890',
+				isbn: '9781305156067',//'9780176689902', //9781305156067
 				image: 'img/macro.jpg',
 				qtyInStock: 2
 			},
@@ -229,7 +233,7 @@ const app = new Vue({
 				title: 'Intro to Psychology',
 				professor: 'Prof Perry',
 				major: 'PSYN',
-				isbn: '0987654321',
+				isbn: '1464140812',
 				image: 'img/psy.jpg',
 				qtyInStock: 1
 			},
@@ -237,15 +241,15 @@ const app = new Vue({
 				title: 'Frankenstein',
 				professor: 'Prof Browne',
 				major: 'EBEN',
-				isbn: '1234512345',
+				isbn: '9781770483408',
 				image: 'img/frank.jpg',
 				qtyInStock: 3
 			},
 			{
-				title: 'Advanced Programming',
+				title: 'Starting Out With Java',
 				professor: 'Prof Robinson',
 				major: 'MCON',
-				isbn: '2222222222',
+				isbn: '9780133957235',
 				image: 'img/java.jpg',
 				qtyInStock: 0
 			},
@@ -253,7 +257,7 @@ const app = new Vue({
 				title: 'Biology I',
 				professor: 'Prof Abrahmson',
 				major: 'BION',
-				isbn: '7771112223',
+				isbn: '9780321701671',
 				image: 'img/bio.jpg',
 				qtyInStock: 2
 			}
