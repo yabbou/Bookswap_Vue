@@ -126,12 +126,12 @@ Vue.component('trade_form', {
 	template: `
 <form id="book_form">
 <div>
-	<input v-model='title' list="books" type="text" id="title" placeholder="Title">
+	<input class='form-control' v-model='title' list="books" type="text" id="title" placeholder="Title">
 	<span id="t-id" class="error">*</span>
 </div>
 
 <div>
-	<input v-model='major' list="majors" type="text" id="major" placeholder="Major">
+	<input class='form-control' v-model='major' list="majors" type="text" id="major" placeholder="Major">
 	<datalist id="majors">
 		<option v-for='book in this.$parent.books' :value='book.major'></option>
 	</datalist>
@@ -139,7 +139,7 @@ Vue.component('trade_form', {
 </div>
 
 <div>
-	<input v-model='professor' list="profs" type="text" id="prof" placeholder="Professor">
+	<input class='form-control' v-model='professor' list="profs" type="text" id="prof" placeholder="Professor">
 	<datalist id="profs">
 		<option v-for='book in this.$parent.books' :value='book.professor'></option>
 	</datalist>
@@ -147,14 +147,14 @@ Vue.component('trade_form', {
 </div>
 
 <div>
-	<input v-model='isbn' type="number" id="isbn" placeholder="ISBN-13">
+	<input class='form-control' v-model='isbn' type="number" id="isbn" placeholder="ISBN-13">
 	<span id="i-id" class="error">*</span>
 	<!-- should really also check if not taken by other book... live -->
 </div>
 
 <div class='book-buttons'>
-	<input class='btn-add-book' type='submit' id='sell-book' value='Sell Book' @click='onSubmit(1)'>
-	<input class='btn-add-book' type='submit' id='ask-book' value='Book Wanted' @click='onSubmit(0)'>
+	<button class=' btn-add-book' type='submit' id='sell-book' value='Sell Book' @click='onSubmit(1)'>Sell Book</button>
+	<button class=' btn-add-book' type='submit' id='ask-book' value='Book Wanted' @click='onSubmit(0)'>Book Wanted</button>
 </div>
 </form>`,
 

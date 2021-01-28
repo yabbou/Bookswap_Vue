@@ -27,7 +27,7 @@
 }
 
 .browse-text input {
-    height: 54px;
+    height: 54px!important;
     background-color: #f2f2f262;
     margin: 0;
     width: 80%!important;

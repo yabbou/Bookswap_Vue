@@ -84,7 +84,7 @@ $(document).ready(function () {
 			alert('Heads up: ISBN-13 offers highest price accuracy.');
 			valid_inputs++;
 			errorElement.text('').hide();
-		} else if (input.length != 10 || input.length != 13) {
+		} else if (input.length != 10 && input.length != 13) {
 			errorElement.text('Please enter ten or thirteen digits.').show();
 		} else {
 			valid_inputs++;

@@ -42,5 +42,15 @@
 </html>
 <script src="main.js"></script>
 <script>
-    
+    $(window).on('resize', function onResize() {
+        var BUTTONS_SHRINK_SCREEN_SIZE = 640;
+        if ($(window).width() <= BUTTONS_SHRINK_SCREEN_SIZE) {
+            $('#sell-book').text('Selling');
+            $('#ask-book').text('Wanted');
+        } else {
+            $('#sell-book').text('Sell Book');
+            $('#ask-book').text('Book Wanted');
+        }
+    }
+    ).resize();
 </script>

@@ -22,7 +22,9 @@ body {
 
 .inner-body {
     padding: 20px 40px;
-    min-height: 460px;
+    /* min-height: 460px; */
+    min-height: 80.5%;
+
     margin-top: 60px;
 }
 
@@ -90,11 +92,11 @@ button, input[type=submit] {
     color: #2587c3;
     border: solid 1px #4da5ee;
 
-    font-size: 14px;
+    font-size:medium;
     opacity: 0.75;
     /* border: 0; */
     border-radius: 85px;
-    height: 30px;
+    height: 32px;
     padding: 0 10px;
     margin-top: 5px;
 }
@@ -132,12 +134,13 @@ a:hover, a.nav-link:hover, .browse-link a:hover #menu a:hover, slick-slide a:hov
 }
 
 .book-buttons {
-    justify-content: space-around;
+    justify-content: space-evenly;
     display: flex;
+    margin-top: 10px;
 }
 
-.book-buttons .btn-add-book {
-    width: inherit;
+.book-buttons button {
+    
 }
 
 .book-buttons form {

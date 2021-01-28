@@ -1,17 +1,19 @@
-
 #book_form div, #contact_form div {
     display: flex;
     align-items: baseline;
 }
 
-.ask-sell-buttons input {
+.ask-sell-buttons button {
     width: 100%;
+    font-size: inherit;
+    padding: inherit;
 }
 
 form input[type=text], input[type=number], form textarea, .book-buttons, .submit-button {
     width: 40%;
 }
-input.send{
+
+input.send {
     /* float: right; */
 }
 
@@ -44,7 +46,7 @@ td>form {
 
 /* login */
 
-.login-form{
+.login-form {
     width: 35%;
 }
 
@@ -83,12 +85,12 @@ h3.error {
     font-size: medium;
 }
 
-#dialog{
+#dialog {
     width: inherit!important;
     font-size: large;
 }
 
-.title{
+.title {
     margin: 0;
     /* font-size: x-large; */
 }
@@ -101,4 +103,31 @@ h3.error {
 
 h2.admin {
     margin-top: 0;
+}
+
+.form-control {
+    height: auto;
+    font-size: inherit;
+}
+
+@media screen and (max-width: 443px) {
+    #book_form div {
+        display: grid;
+        margin-bottom: 10px;
+    }
+    .error{
+        margin: 0;
+    }
+    .form-control, .error{
+        width: 100%!important;
+    }
+    .book-buttons {
+        display: flex!important;
+        width: auto;
+    }
+    .book-buttons button {
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+    
 }
