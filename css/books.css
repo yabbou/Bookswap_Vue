@@ -96,7 +96,7 @@
 }
 
 .book-tile h4 {
-    margin: 0;
+    margin: 3px 0;
 }
 
 .book-tile p {
@@ -171,7 +171,7 @@
     text-decoration: underline;
 }
 
-svg {
+svg, .tooltip-inner {
     float: right;
     bottom: -2px;
     right: 3px;
@@ -180,4 +180,17 @@ svg {
 
 .tooltip-inner {
     width: 150px;
+}
+
+.tooltip.fade.bottom.in {
+    /* float: right;
+    bottom: -2px;
+    right: 3px;
+    position: relative; */
+}
+
+/* Tooltip on right */
+
+.tooltip-arrow {
+    display: none;
 }
