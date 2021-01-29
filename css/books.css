@@ -83,7 +83,6 @@
 .book-tile a img {
     color: #666666;
     height: 200px;
-    
     border: solid .1px #85b2f5de;
     border-radius: 1px;
 }
@@ -183,4 +182,49 @@ svg, .tooltip-inner {
 
 .tooltip-arrow {
     display: none;
+}
+
+@media screen and (max-width: 810px) {
+    .book-tiles {
+        padding-left: 0;
+    }
+    .book-tile {
+        margin: 0px 16px 29px 11px;
+    }
+    h3.browse-res {
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tooltip-inner {
+        right: -21px;
+    }
+}
+
+@media screen and (max-width: 502px) {
+    .sidebar h3 {
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width: 485) {
+    .sidebar-and-content {
+        display: inline-block!important;
+    }
+    .book-tiles {
+        margin-right: 0;
+    }
+    .sidebar, .browse-text-sidebar{
+        border-bottom: solid 2px aliceblue;
+    }
+    .sidebar h3[aria-expanded]{
+        aria-expanded: false;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .tooltip-inner {
+        /* right: ; */
+    }
 }

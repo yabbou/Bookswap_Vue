@@ -36,7 +36,7 @@ Vue.component('footer_r', {
 Vue.component('searchbar', {
 	template: `
 <span>
-	<form @submit.prevet='onSubmit'><input v-model="searchTerm" list='titles' type='text' name='browse' placeholder='Browse our titles' required></form>
+	<form @submit.prevet='onSubmit'><input class='form-control' v-model="searchTerm" list='titles' type='text' name='browse' placeholder='Browse our titles' required></form>
 </span>
 `,
 	data() {
