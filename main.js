@@ -294,7 +294,7 @@ const app = new Vue({
 		// },
 		isLong() {
 			console.log();
-			var MANY_CHARACTERS = 5;
+			var MANY_CHARACTERS = 50;
 			return this.msgEntry.length > MANY_CHARACTERS;
 		}
 	}

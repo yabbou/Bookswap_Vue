@@ -31,28 +31,28 @@
         <h4>Feel Free to Reach Out!</h4>
 
         <form id="contact_form" action="index.html" method="POST">
-            <div><input type="text" placeholder="Enter Name Here" id="nameEntry">
+            <div><input class="form-control" type="text" placeholder="Name" id="nameEntry">
                 <span class="error"></span>
             </div>
 
-            <div><input type="text" placeholder="Enter Email Here" id="emailEntry">
+            <div><input class="form-control" type="text" placeholder="Email" id="emailEntry">
                 <span class="error"></span>
             </div>
             <!-- <span style:"font-size:small">Example: student@touro.edu</span> -->
 
             <div>
-                <input type="text" id="datepicker" placeholder="Select Comment Date Here">
+                <input class="form-control" type="text" id="datepicker" placeholder="Comment Date">
             </div>
 
             <div>
-                <textarea v-model='msgEntry' placeholder="Enter Comments Here" id="msgEntry"></textarea>
+                <textarea class="form-control" rows="5" v-model='msgEntry' placeholder="Comments" id="msgEntry"></textarea>
                 <!-- <div id="msgEntryMessages"> -->
                     <span class="error"></span>
                     <span class="success" v-if=isLong>Thanks for the valuable feedback!</span>
                 <!-- </div> -->
             </div>
 
-            <div class="submit-button"> <input class="send" type="submit" value="Send"> </input></div>
+            <div class="submit-button"> <button class="send" type="submit">Send</input></div>
         </form>
         <div id="dialog" class="success">Thank for the message!<br>We will try to repsond in the near future!</div>
     </div>

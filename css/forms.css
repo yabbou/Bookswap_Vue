@@ -13,7 +13,7 @@ form input[type=text], input[type=number], form textarea, .book-buttons, .submit
     width: 40%;
 }
 
-input.send {
+button.send {
     /* float: right; */
 }
 
@@ -111,15 +111,19 @@ h2.admin {
 }
 
 @media screen and (max-width: 443px) {
-    #book_form div {
+    #book_form div, #contact_form div {
         display: grid;
         margin-bottom: 10px;
     }
-    .error{
+    .error {
         margin: 0;
     }
-    .form-control, .error{
+    .form-control, .error {
         width: 100%!important;
+    }
+    textarea {
+        min-width: 100%;
+        max-width: 100%;
     }
     .book-buttons {
         display: flex!important;
@@ -129,5 +133,8 @@ h2.admin {
         margin-bottom: 5px;
         margin-left: 0;
     }
-    
+    #ui-datepicker-div {
+        left: 29%!important;
+        top: 54%!important;
+    }
 }

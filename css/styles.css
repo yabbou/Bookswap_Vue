@@ -70,19 +70,19 @@ footer p{
 
 input[type=text], input[type=number], input[type=email], input[type=password], textarea {
     /* width: 100%; */
-    padding: 15px 20px;
+    padding: 15px 20px!important;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #d8d5d520;
+    background-color: #d8d5d520!important;
 }
 
 textarea {
     min-width: 40%;
     max-width: 40%;
-    height: 140px;
+    /* height: 140px; */
 }
 
 button, input[type=submit] {
@@ -137,10 +137,6 @@ a:hover, a.nav-link:hover, .browse-link a:hover #menu a:hover, slick-slide a:hov
     justify-content: space-evenly;
     display: flex;
     margin-top: 10px;
-}
-
-.book-buttons button {
-    
 }
 
 .book-buttons form {
