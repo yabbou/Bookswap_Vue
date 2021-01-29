@@ -25,7 +25,7 @@ Vue.component('header_r', {
 
 Vue.component('footer_r', {
 	template: `
-<footer>
+<footer id='foot'>
     <a class="footer-link" href="contact.html">Contact Us</a>
     <a class="footer-link" href="about.html">About</a>
     <p>Site by Yaakov Abbou</p>

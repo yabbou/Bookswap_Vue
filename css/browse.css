@@ -123,7 +123,6 @@
 .landing-text {
     /* text-align: right; */
     margin-bottom: 0!important;
-
     text-transform: uppercase;
     padding: 20px;
     margin: 60px;
@@ -193,12 +192,20 @@
     border: solid 1px lightgrey;
     border-radius: 3px;
     padding: 9px;
+    display: contents;
 }
 
 #ui-datepicker-div a.ui-datepicker-next, #ui-datepicker-div button.ui-datepicker-close {
     float: right;
 }
 
-#ui-datepicker-div td{
+#ui-datepicker-div td {
     padding: 2.5px;
+}
+
+.slick-dots {
+    position: relative!important;
+    bottom: inherit!important;
+    right: inherit;
+    padding-top: 4px!important;
 }

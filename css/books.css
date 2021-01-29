@@ -218,9 +218,9 @@ svg, .tooltip-inner {
     .sidebar, .browse-text-sidebar{
         border-bottom: solid 2px aliceblue;
     }
-    .sidebar h3[aria-expanded]{
+    /* .sidebar h3[aria-expanded]{
         aria-expanded: false;
-    }
+    } */
 }
 
 @media screen and (max-width: 374px) {
