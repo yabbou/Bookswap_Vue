@@ -32,17 +32,12 @@ header {
     overflow: hidden;
     border-radius: 50%;
     border: #807f7f solid 1px;
-    background-color: #f5f5f5;
+    background-color: whitesmoke;
 }
 
 img.logo {
     margin: 0;
-    /* margin-left: -25%;
-    height: 100%; */
-    padding-top: 20%;
-    padding-left: 5%;
-    height: 60%;
-    background-image: url('../img/hand-to-hand.jpg');
+    /* margin-top: 14%; */
 }
 
 ul.navbar a:hover {

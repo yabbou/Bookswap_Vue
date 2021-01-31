@@ -184,7 +184,7 @@ svg, .tooltip-inner {
     display: none;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 827px) {
     .book-tiles {
         padding-left: 0;
     }

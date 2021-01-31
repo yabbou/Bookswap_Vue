@@ -4,7 +4,7 @@ Vue.component('header_r', {
 	template: `
 <header>
     <div class="logo-and-title">
-        <div class="img-cropper"><img class="logo" src="img/hand-to-hand.jpg"></div>
+        <div class="img-cropper"><img class="logo" src="img/hand-to-hand.png"></div>
         <h3 class="nav-title"><a href="index.html">The Inside Story</a></h3>
     </div>
 
