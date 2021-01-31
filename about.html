@@ -39,7 +39,11 @@
 </div>
 
 <script src="main.js"></script>
-<script src="js/resize.js">
-    resizeFooter(358);
-    // $('footer').css('position', 'absolute');
+<script src="js/resize.js"></script>
+<script>
+    $(document).ready(function () {
+        $(window).on('resize', function () {
+            relativeFooterWidthLessThan(361)
+        }).resize();
+    });
 </script>

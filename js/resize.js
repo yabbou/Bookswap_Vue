@@ -1,9 +1,21 @@
-$(document).ready(function () {
-    $(window).on('resize', function resizeFooter(FOOTER_RISES_SCREEN_SIZE) {
-        if ($(window).width() >= FOOTER_RISES_SCREEN_SIZE) {
-            $('footer').css('position', 'absolute');
-        } else {
-            $('footer').css('position', 'relative');
-        }
-    }).resize();
-});
+function relativeFooterWidthGreaterThan(FOOTER_RISES_SCREEN_SIZE) {
+    var position = $(window).width() >= FOOTER_RISES_SCREEN_SIZE ? 'relative' : 'absolute';
+    $('footer').css('position', position);
+}
+
+function relativeFooterWidthLessThan(FOOTER_RISES_SCREEN_SIZE) {
+    var position = $(window).width() <= FOOTER_RISES_SCREEN_SIZE ? 'relative' : 'absolute';
+    $('footer').css('position', position);
+}
+
+function relativeFooterHeightGreaterThan(FOOTER_RISES_SCREEN_SIZE) {
+    $('footer').css('position',
+        $(window).height() >= FOOTER_RISES_SCREEN_SIZE ? 'relative' : 'absolute'
+    );
+}
+
+function relativeFooterHeightLessThan(FOOTER_RISES_SCREEN_SIZE) {
+    $('footer').css('position',
+        $(window).height() <= FOOTER_RISES_SCREEN_SIZE ? 'relative' : 'absolute'
+    );
+}

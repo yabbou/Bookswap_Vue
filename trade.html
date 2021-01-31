@@ -43,16 +43,19 @@
 <script src="main.js"></script>
 <script src="js/resize.js"></script>
 <script>
-    // $(window).on('resize', resize(952)).resize(); //not yet working
-    $(window).on('resize', function onResize() {
-        var BUTTONS_SHRINK_SCREEN_SIZE = 690;
-        if ($(window).width() <= BUTTONS_SHRINK_SCREEN_SIZE) {
-            $('#sell-book').text('Selling');
-            $('#ask-book').text('Wanted');
-        } else {
-            $('#sell-book').text('Sell Book');
-            $('#ask-book').text('Book Wanted');
-        }
-    }
-    ).resize();
+    $(document).ready(function () {
+        $(window).on('resize', function () {
+            var BUTTONS_SHRINK_SCREEN_SIZE = 690;
+            if ($(window).width() <= BUTTONS_SHRINK_SCREEN_SIZE) {
+                $('#sell-book').text('Selling');
+                $('#ask-book').text('Wanted');
+            } else {
+                $('#sell-book').text('Sell Book');
+                $('#ask-book').text('Book Wanted');
+            }
+
+            // relativeFooterHeightGreaterThan(623);
+            relativeFooterWidthLessThan(1024);
+        }).resize();
+    });
 </script>
