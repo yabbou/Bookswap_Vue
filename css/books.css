@@ -189,7 +189,8 @@ svg, .tooltip-inner {
         padding-left: 0;
     }
     .book-tile {
-        margin: 0px 16px 29px 11px;
+        /* margin: 0px 16px 29px 11px; */
+        margin: 0px 4px 25px 17px;
     }
     h3.browse-res {
         font-size: larger;
@@ -208,23 +209,20 @@ svg, .tooltip-inner {
     }
 }
 
-@media screen and (max-width: 485) {
+@media screen and (max-width: 485px) {
     .sidebar-and-content {
-        display: inline-block!important;
+        display: grid!important;
     }
     .book-tiles {
-        margin-right: 0;
+        /* margin-right: 0; */
+        place-content: center;
+        padding-right: 0;
+        margin-top: 35px;
     }
-    .sidebar, .browse-text-sidebar{
+    .sidebar {
         border-bottom: solid 2px aliceblue;
-    }
-    /* .sidebar h3[aria-expanded]{
-        aria-expanded: false;
-    } */
-}
-
-@media screen and (max-width: 374px) {
-    .tooltip-inner {
-        /* right: ; */
+        border-right: none;
+        margin: 15px 18px;
+        padding: 25px 5px;
     }
 }
