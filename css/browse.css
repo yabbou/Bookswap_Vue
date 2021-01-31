@@ -15,6 +15,11 @@
     margin-right: 10%;
 }
 
+#b-form input:active {
+    /* box-shadow: 0 1px 1px rgb(0 0 0 / 17%), 0 0 4px rgb(102 175 233 / 91%); */
+    /* box-shadow: none; */
+}
+
 .parallax {
     background-attachment: fixed;
     background-position: center;
@@ -163,6 +168,7 @@
 
 .slick-slide h4 {
     margin: 10px auto 20px;
+    text-align: center;
 }
 
 .book-tile-img {
@@ -208,4 +214,54 @@
     bottom: inherit!important;
     right: inherit;
     padding-top: 4px!important;
+}
+
+.slick-next, .slick-prev {
+    height: 45px!important;
+    width: 45px!important;
+    top: 40%!important;
+    position: relative!important;
+    display: none!important;
+}
+
+@media screen and (max-width:933px) {
+    .landing-text {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:777px) {
+    .landing-text {
+        font-size: 36px;
+        text-shadow: 0px 5px 10px #adababde;
+    }
+}
+
+@media screen and (max-width:452px) {
+    .landing-text {
+        margin-right: auto;
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:416px) and (min-width:389px) {
+    .browse-links {
+        margin-right: 20%;
+    }
+}
+@media screen and (max-width:388px) and (min-width:326px) {
+    .browse-links {
+        margin-right: 16%;
+    }
+}
+@media screen and (max-width:393px) {
+    .jcarousel {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:324px) {
+    .landing-text {
+        margin-left: auto;
+        font-size: 36px;
+    }
 }

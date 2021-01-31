@@ -58,9 +58,9 @@ Vue.component('searchbar_home', {
 			<searchbar></searchbar>
         </div>
 
-        <div class='browse-link'><a href='books.html?major=#'>By major </a></div>
+        <div class='browse-links'><div class='browse-link'><a href='books.html?major=#'>By major </a></div>
         <div class='browse-link'><a href='books.html?prof=#'>By professor </a></div>
-        <div class='browse-link'><a href='books.html'>All books </a></div>
+        <div class='browse-link'><a href='books.html'>All books </a></div></div>
     </form>
 <h1 class="landing-text">Buy This Semester's Books<br>From Last Semester's Students</h1>
 </div>

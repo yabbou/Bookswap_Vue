@@ -30,13 +30,13 @@
         <searchbar_home></searchbar_home>
         <div class='carousel-and-title'>
             <h3 class='featured'>Featured</h3>
-
             <div class='jcarousel'>
                 <div v-for='(book, index) in books' :key='book.index'>
                     <a><img :src='book.image' :alt='book.title'></a>
                     <h4><a>{{book.title}}</a></h4>
                 </div>
             </div>
+
         </div>
     </body>
     <footer_r></footer_r>
@@ -44,4 +44,3 @@
 
 </html>
 <script src="main.js"></script>
-<script src="js/resize.js"></script>
