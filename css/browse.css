@@ -190,17 +190,17 @@
     font-size: small;
 }
 
-#ui-datepicker-div {
-    left: 42%!important;
-    top: 48%!important;
+#ui-datepicker-div{
+    left: 42.5%!important;
+    top: 47.5%!important;
     background-color: aliceblue;
     border: solid 1px lightgrey;
     border-radius: 3px;
     padding: 9px;
-    display: contents;
 }
 
-#ui-datepicker-div a.ui-datepicker-next, #ui-datepicker-div button.ui-datepicker-close {
+#ui-datepicker-div a.ui-datepicker-next, 
+#ui-datepicker-div button.ui-datepicker-close {
     float: right;
 }
 
