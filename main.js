@@ -53,7 +53,7 @@ Vue.component('searchbar', {
 Vue.component('searchbar_home', {
 	template: `
 <div class='b-form-container parallax'>
-    <form id='b-form' method='get'>
+    <div id='b-form'>
         <div class='browse-text'>
 			<searchbar></searchbar>
         </div>
@@ -61,7 +61,7 @@ Vue.component('searchbar_home', {
         <div class='browse-links'><div class='browse-link'><a href='books.html?major=#'>By major </a></div>
         <div class='browse-link'><a href='books.html?prof=#'>By professor </a></div>
         <div class='browse-link'><a href='books.html'>All books </a></div></div>
-    </form>
+    </div>
 <h1 class="landing-text">Buy This Semester's Books<br>From Last Semester's Students</h1>
 </div>
 `

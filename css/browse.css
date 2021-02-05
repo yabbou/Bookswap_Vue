@@ -11,7 +11,7 @@
 
 #b-form {
     margin-left: 23%;
-    margin-right: 10%;
+    margin-right: 16%;
 }
 
 #b-form input:active {
@@ -35,6 +35,8 @@
     background-color: #f2f2f262;
     margin: 0;
     width: 80%!important;
+    border: solid 1.5px #53789cc4;
+    border-radius: 8px;
 }
 
 .browse-text-sidebar input {
