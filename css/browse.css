@@ -199,6 +199,7 @@
     border: solid 1px lightgrey;
     border-radius: 3px;
     padding: 9px;
+    display: none;
 }
 
 #ui-datepicker-div a.ui-datepicker-next, 
